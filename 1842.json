@@ -1,16 +1,12 @@
 {
   "info": {
-    "title": "1836.5",
+    "title": "1842",
     "subtitle": "Subsidiaries & Robber Barons",
     "designer": "TBP",
     "publisher": "lookout",
     "background": "gray",
     "titleX": 50,
     "currency": "$#"
-  },
-  "links": {
-    "bgg": "https://www.boardgamegeek.com/boardgame/421/1830-railways-robber-barons",
-    "rules": "https://boardgamegeek.com/wiki/page/1830_Rules"
   },
   "tokens": ["Round"],
   "ipo": true,
@@ -185,11 +181,10 @@
   ],
   "privates": [
     {
-      "name": "Schuylkill Valley",
-      "price": 20,
-      "revenue": 5,
-      "hex": "G15",
-      "description": ""
+      "name": "Cooking the Books",
+      "price": 0,
+      "revenue": 30,
+      "description": "At the start of the OR, pay $___ from the company treasury to its president"
     },
     {
       "name": "Champlain & St.Lawrence",
