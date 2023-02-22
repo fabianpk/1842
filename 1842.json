@@ -192,55 +192,55 @@
   "trains": [
     {
       "name": "2",
-      "quantity": 6,
-      "price": 80,
+      "quantity": 8,
+      "price": 100,
       "color": "yellow",
       "image": "2T",
       "rust": "4"
     },
     {
       "name": "3",
-      "quantity": 5,
-      "price": 180,
+      "quantity": 6,
+      "price": 200,
       "color": "green",
       "image": "3T",
-      "rust": "6"
+      "rust": "5"
     },
     {
       "name": "4",
       "quantity": 4,
-      "price": 300,
+      "price": 350,
       "color": "green",
       "image": "4T",
-      "rust": "D"
+      "rust": "7"
     },
     {
       "name": "5",
-      "quantity": 3,
-      "price": 450,
+      "quantity": 2,
+      "price": 550,
       "color": "brown",
-      "image": "5T"
+      "image": "5T",
+      "rust": "8"
     },
     {
       "name": "6",
       "quantity": 2,
-      "price": 630,
+      "price": 800,
       "color": "brown",
       "image": "6T"
     },
     {
-      "name": "D",
-      "quantity": "∞",
-      "print": 9,
+      "name": "7",
+      "quantity": 2,
       "price": 1100,
+      "color": "brown"
+    },
+    {
+      "name": "8",
+      "quantity": 7,
+      "price": 1450,
       "color": "brown",
-      "description": "Cost $800 when trading in a 4T, 5T or 6T",
-      "available": "6",
-      "discount": {
-        "4": 300,
-        "5": 300,
-        "6": 300
-      }
+      "image": "Diesel"
     }
   ],
   "privates": [
