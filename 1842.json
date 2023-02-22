@@ -1,6 +1,7 @@
 {
   "info": {
-    "title": "1842",
+    "title": "Little Italy: 1842",
+    "titleSize": 80,
     "subtitle": "Subsidiaries & Robber Barons",
     "designer": "TBP",
     "publisher": "lookout",
@@ -16,22 +17,22 @@
     {
       "number": 3,
       "certLimit": 20,
-      "capital": 680
+      "capital": 840
     },
     {
       "number": 4,
       "certLimit": 16,
-      "capital": 680
+      "capital": 840
     },
     {
       "number": 5,
       "certLimit": 13,
-      "capital": 680
+      "capital": 840
     },
     {
       "number": 6,
       "certLimit": 11,
-      "capital": 680
+      "capital": 840
     }
   ],
   "shareTypes": {
@@ -90,6 +91,13 @@
       "logo": "1846/GT",
       "tokens": "four"
     },  
+    {
+      "name": "Northern Pacific",
+      "abbrev": "NORPAC",
+      "color": "orange",
+      "logo": "1871BC/NORPAC",
+      "tokens": "four"
+    },      
     {
       "name": "Grand Rapids and Indiana",
       "abbrev": "GRI",
@@ -243,39 +251,10 @@
       "description": "Your accountant is creative! At the start of the OR, pay $___ from the company treasury to its president"
     },
     {
-      "name": "Champlain & St.Lawrence",
-      "price": 40,
-      "revenue": 10,
-      "hex": "B20",
-      "description": "A corporation owning the C&StL may lay a tile on the C&StL's hex even if this hex is not connected to the corporations's railhead. This free tile placement is in addition to the corporation's normal tile placement."
-    },
-    {
-      "name": "Delaware & Hudson",
-      "price": 70,
-      "revenue": 15,
-      "hex": "F16",
-      "description": "A corporation owning the Delaware & Hudson may establish a railhead on the D&H hex by laying a station tile and a token. The station does not have to be connected to the remainder of the corporation's route. The tile laid is the owning corporation's one tile placement for the turn."
-    },
-    {
-      "name": "Mohawk & Hudson",
-      "price": 110,
-      "revenue": 20,
-      "company": "NYC",
-      "description": "A player owning the M&H may exhange it for a 10% share of the NYC if he does not already hold 60% of the NYC and there is NYC stock available in the Bank or the Pool. The exchange may be made during the player's turn of a stock round or between the turns of other players or corporations in either stock or operating rounds. This action closes the M&H."
-    },
-    {
-      "name": "Camden & Amboy",
-      "price": 160,
-      "revenue": 25,
-      "company": "PRR",
-      "description": "The initial purchaser of the C&A immediately receives a 10% share of PRR stock without further payment. This action does not close the C&A. The PRR corporation will not be running at this point, but the stock may be retained or sold subject to the ordinary rules of the game."
-    },
-    {
-      "name": "Baltimore & Ohio",
-      "price": 220,
-      "revenue": 30,
-      "company": "B&O",
-      "description": "The owner of the B&O private company immediately receives the President's certificate of the B&O without further payment. The B&O private company may not be sold to any corporation, and does not exchange hands if the owning player loses the Presidency of the B&O. When the B&O purchases its first train the private company is closed down."
+      "name": "Vandelay Industries",
+      "price": 0,
+      "revenue": "___",
+      "description": "Importer/Exporter Company. The company comes with one token to be placed on one offboard. Increases the revenue of that offboard by $___"
     }
   ],
   "phases": [
@@ -383,33 +362,56 @@
   ],
   "stock": {
     "type": "2D",
+    "movement": {
+      "up": ["All Shares Held"],
+      "down": ["Per Share Sold"],
+      "left": ["Withheld"],
+      "right": ["Paid out"]
+    },
     "display": {
-      "par": {
-        "x": 15,
-        "y": 3
-      },
-      "roundTracker": {
-        "type": "col-reverse",
-        "size": 25,
-        "x": 13,
-        "y": 4
-      },
       "legend": {
         "reverse": true,
-        "verticalAlign": "bottom",
-        "x": 7,
-        "y": 11
+        "x": 16,
+        "y": 3
       }
     },
-    "par": {
-      "values": [100, 90, 82, 76, 71, 67]
-    },
-    "movement": {
-      "up": ["Sold out"],
-      "down": ["Every share sold"],
-      "left": ["Revenue withheld"],
-      "right": ["Revenue paid out"]
-    },
+    "ledges": [
+      {
+        "color": "water",
+        "border": true,
+        "coords": ["11 0", "11 7"]
+      },
+      {
+        "color": "orange",
+        "border": true,
+        "coords": ["16 0", "16 3"]
+      },
+      {
+        "color": "red",
+        "border": true,
+        "coords": ["2 4", "2 5", "3 5", "3 4", "2 4"]
+      },
+      {
+        "color": "red",
+        "border": true,
+        "coords": ["5 3", "5 4", "6 4", "6 3", "5 3"]
+      },
+      {
+        "color": "red",
+        "border": true,
+        "coords": ["8 2", "8 3", "9 3", "9 2", "8 2"]
+      },
+      {
+        "color": "red",
+        "border": true,
+        "coords": ["11 1", "11 2", "12 2", "12 1", "11 1"]
+      },
+      {
+        "color": "red",
+        "border": true,
+        "coords": ["14 0", "14 1", "15 1", "15 0", "14 0"]
+      }
+    ],
     "market": [
       [
         {
@@ -772,35 +774,6 @@
           "value": 35,
           "arrow": "up"
         }
-      ],
-      [
-        {
-          "label": 11,
-          "arrow": "down"
-        },
-        13,
-        15,
-        16,
-        18,
-        20,
-        {
-          "value": 23,
-          "arrow": "up"
-        }
-      ],
-      [
-        {
-          "label": 8,
-          "arrow": "down"
-        },
-        9,
-        10,
-        11,
-        13,
-        {
-          "value": 14,
-          "arrow": "up"
-        }
       ]
     ],
     "legend": [
@@ -816,52 +789,459 @@
     ]
   },
   "tiles": {
-    "1": 1,
-    "2": 1,
-    "3": 2,
-    "4": 2,
-    "7": 4,
-    "8": 8,
-    "9": 7,
-    "14": 3,
-    "15": 2,
-    "16": 1,
-    "18": 1,
-    "19": 1,
-    "20": 1,
-    "23": 3,
-    "24": 3,
-    "25": 1,
-    "26": 1,
-    "27": 1,
-    "28": 1,
-    "29": 1,
-    "39": 1,
-    "40": 1,
-    "41": 2,
-    "42": 2,
-    "43": 2,
-    "44": 1,
-    "45": 2,
-    "46": 2,
-    "47": 1,
-    "53": 2,
-    "54": 1,
-    "55": 1,
-    "56": 1,
-    "57": 4,
-    "58": 2,
-    "59": 2,
-    "61": 2,
-    "62": 1,
-    "63": 3,
-    "64": 1,
-    "65": 1,
-    "66": 1,
-    "67": 1,
-    "68": 1,
-    "69": 1,
-    "70": 1
+    "64":1,
+    "65":1,
+    "66":1,
+    "67":1,
+    "68":1,
+    "TBP1": {
+      "quantity": 1,
+      "color": "yellow",
+      "labels": [
+        {
+          "label": "M",
+          "angle": 270,
+          "percent": 0.667
+        }
+      ],      
+      "values": [
+        {
+          "angle": 120,
+          "percent": 0.8,
+          "value": 60
+        }
+      ],
+      "cities": [
+        {
+          "angle": 60,
+          "percent": 0.333,
+          "name": {
+            "reverse": true,
+            "name": "Detroit"
+          }
+        }
+      ],
+      "track": [
+        {
+          "type": "straightStop",
+          "side": 5
+        },
+        {
+          "type": "custom",
+          "path": "m 0 -85 C 30 0 0 0 -10 0"
+        }
+      ]
+    },
+    "TBP2": {
+      "quantity": 1,
+      "color": "green",
+      "labels": [
+        {
+          "label": "M",
+          "angle": 270,
+          "percent": 0.667
+        }
+      ],      
+      "values": [
+        {
+          "angle": 300,
+          "percent": 0.8,
+          "value": 100
+        }
+      ],
+      "cities": [
+        {
+          "size": 2,
+          "rotation": 60,
+          "angle": 60,
+          "percent": 0.4,
+          "name": {
+            "x": -35,
+            "name": "Detroit",
+            "y": 0,
+            "fontSize":14
+          }
+        }
+      ],
+      "track": [
+        {
+          "type": "straightStop",
+          "side": 5
+        },
+        {
+          "type": "straight",
+          "side": 2
+        },
+                
+        {
+          "type": "custom",
+          "path": "m 0 -85 C 30 0 0 0 -10 0"
+        }
+      ]
+    },   
+    "TBP3": {
+      "quantity": 1,
+      "color": "brown",
+      "labels": [
+        {
+          "label": "M",
+          "angle": 0,
+          "percent": 0.8
+        }
+      ],      
+      "values": [
+        {
+          "angle": 310,
+          "percent": 0.85,
+          "value": 150
+        }
+      ],
+      "cities": [
+        {
+          "size": 3,
+          "name": {
+            "name": "Detroit",
+            "fontSize":14
+          }
+        }
+      ],
+      "track": [
+        {
+          "type": "straight",
+          "side": 2
+        },
+        {
+          "type": "straightStop",
+          "side": 3
+        },
+        {
+          "type": "straightStop",
+          "side": 4
+        }
+
+      ]
+    },         
+    "TBP4": {
+      "color": "green",
+      "cities": [{ "name": { "offset": 75, "name": "Boston" } ,"size":2}],
+      "labels": [{ "label": "G", "angle": 150, "percent": 0.8 }],
+      "values": [{ "value": 40, "angle": 210, "percent": 0.8 }],
+      "track": [{ "side": 1 }, { "side": 2 }, { "side": 3 }, { "side": 4 }]
+    },  
+    "TBP5": {
+      "color": "brown",
+      "cities": [
+        { "size": 2, "name": { "reverse": true, "offset": 61, "name": "Boston" } }
+      ],
+      "labels": [{ "label": "G", "angle": 150, "percent": 0.8 }],
+      "values": [{ "value": 60, "angle": 210, "percent": 0.8 }],
+      "track": [
+        { "side": 1 },
+        { "side": 2 },
+        { "side": 3 },
+        { "side": 4 },
+        { "side": 5 }
+      ]
+    },
+    "TBP6": {
+      "quantity": 1,
+      "color": "brown",
+      "labels": [
+        {
+          "label": "OO",
+          "angle": 150,
+          "percent": 0.8
+        }
+      ],      
+      "values": [
+        {
+          "angle": 270,
+          "percent": 0.9,
+          "value": 80
+        }
+      ],
+      "cities": [
+        {
+          "size": 2
+        }
+      ],
+      "track": [
+        {
+          "type": "straight",
+          "side": 2
+        },
+        {
+          "type": "straight",
+          "side": 1
+        },
+        {
+          "type": "straight",
+          "side": 3
+        }
+
+      ]
+    },          
+    "TBP7": {
+      "color": "green",
+      "values": [
+        {
+          "angle": 215,
+          "percent": 0.6,
+          "value": 60
+        }
+      ],
+      "labels": [
+        {
+          "label": "NY",
+          "fontSize": 24,
+          "angle": 90,
+          "percent": 0.8
+        }
+      ],
+      "cities": [
+        {
+          "angle": 30,
+          "percent": 0.5
+        },
+        {
+          "angle": 150,
+          "percent": 0.5
+        }
+      ],
+      "track": [
+        {
+          "type": "sharp",
+          "side": 1
+        },
+        {
+          "type": "custom",
+          "path": "m 80 50 C 40 0 0 0 -20 -40"
+        },
+        {
+          "type": "gentle",
+          "side": 6
+        },
+        {
+          "type": "sharp",
+          "side": 3
+        }
+      ]
+    },    
+    "TBP8": {
+      "color": "green",
+      "values": [
+        {
+          "angle": 240,
+          "percent": 0.7,
+          "value": 60
+        }
+      ],
+      "labels": [
+        {
+          "label": "NY",
+          "fontSize": 24,
+          "angle": 90,
+          "percent": 0.8
+        }
+      ],
+      "cities": [
+        {
+          "angle": 0,
+          "percent": 0.6
+        },
+        {
+          "angle": 180,
+          "percent": 0.6
+        }
+      ],
+      "track": [
+        {
+          "type": "gentle",
+          "side": 2
+        },
+        {
+          "type": "sharp",
+          "side": 6
+        },
+        {
+          "type": "custom",
+          "path": "m 80 50 C 50 0 0 0 10 -40"
+        },
+        {
+          "type": "gentle",
+          "side": 1
+        }
+      ]
+    },
+    "TBP9": {
+      "color": "brown",
+      "values": [
+        {
+          "angle": 255,
+          "percent": 0.85,
+          "value": 80
+        }
+      ],
+      "labels": [
+        {
+          "label": "NY",
+          "fontSize": 24,
+          "angle": 90,
+          "percent": 0.8
+        }
+      ],
+      "cities": [
+        {
+          "angle": 0,
+          "percent": 0.5,
+          "size":2
+        },
+        {
+          "angle": 180,
+          "percent": 0.5,
+          "size":2
+        }
+      ],
+      "track": [
+        {
+          "type": "sharp",
+          "side": 1
+        },
+        {
+          "type": "custom",
+          "path": "m 80 50 C 80 0 0 0 30 -40"
+        },
+        {
+          "type": "sharp",
+          "side": 6
+        },
+        {
+          "type": "sharp",
+          "side": 3
+        }
+      ]
+    },    
+    "TBP10": {
+      "color": "brown",
+      "values": [
+        {
+          "angle": 260,
+          "percent": 0.85,
+          "value": 80
+        }
+      ],
+      "labels": [
+        {
+          "label": "NY",
+          "fontSize": 22,
+          "angle": 90,
+          "percent": 0.9
+        }
+      ],
+      "cities": [
+        {
+          "angle": 0,
+          "percent": 0.6,
+          "size":2
+        },
+        {
+          "angle": 180,
+          "percent": 0.6,
+          "size":2
+        }
+      ],
+      "track": [
+        {
+          "side": 6,
+          "type": "sharp"
+        },
+        {
+          "side": 1,
+          "type": "custom",
+          "path": "m 90 50 C 50 0 0 0 10 -40"
+        },
+        {
+          "side": 5,
+          "type": "custom",
+          "path": "m 90 50 C 30 0 0 0 15 -90"
+        },        
+        {
+          "side": 4,
+          "type": "custom",
+          "path": "m 90 50 C 50 0 0 0 10 -40"
+        }
+      ]
+    },     
+    "TBP11": {
+      "quantity": 3,
+      "color": "brown",
+      "labels": [
+        {
+            "angle": 210,
+            "percent": 0.7,
+            "label": "C"
+        }
+      ],      
+      "values": [
+        {
+          "angle": 120,
+          "percent": 0.8,
+          "value": 60
+        }
+      ],
+      "cities": [
+        {
+          "angle": 60,
+          "percent": 0.0
+        }
+      ],
+      "track": [
+          {
+            "side": 2
+          },
+          {
+            "side": 1
+          },          
+          {
+            "side": 6
+          }
+      ]
+    },    
+    "TBP12": {
+      "quantity": 4,
+      "color": "green",
+      "labels": [
+        {
+            "angle": 210,
+            "percent": 0.7,
+            "label": "C"
+        }
+      ],      
+      "values": [
+        {
+          "angle": 120,
+          "percent": 0.8,
+          "value": 40
+        }
+      ],
+      "cities": [
+        {
+          "angle": 60,
+          "percent": 0.0
+        }
+      ],
+      "track": [
+          {
+            "side": 2
+          },
+          {
+            "side": 1
+          },          
+          {
+            "side": 6
+          }
+      ]
+    }
   },
   "map": {
     "players": {
@@ -881,7 +1261,14 @@
         "hexes": ["I1"]
       },
       {
-        "color": "gray",
+        "color": "yellow",
+        "labels": [
+          {
+            "angle": 30,
+            "percent": 0.7,
+            "label": "C"
+          }
+        ],           
         "cities": [
           {
             "name": {
@@ -912,24 +1299,14 @@
         "hexes": ["D4"]
       },      
       {
-        "color": "gray",
-        "offBoardRevenue": {
-          "angle": 310,
-          "percent": 0.7,
-          "name": {
-            "name": "Norfolk"
-          },
-          "revenues": [
-            {
-              "color": "yellow",
-              "cost": "30"
-            },  
-            {
-              "color": "brown",
-              "cost": "40"
-            }
-          ]
-        },        
+        "color": "yellow",
+        "labels": [
+          {
+            "angle": 210,
+            "percent": 0.7,
+            "label": "C"
+          }
+        ],        
         "cities": [
           {
             "name": {
@@ -939,6 +1316,13 @@
             "companies": ["NW"]
           }
         ],
+        "values": [
+          {
+            "angle": 300,
+            "percent": 0.7,
+            "value": 30
+          }
+        ],        
         "track": [
           {
             "side": 2
@@ -953,13 +1337,20 @@
         "hexes": ["K19"]
       },            
       {
-        "color": "gray",
+        "color": "yellow",
+        "labels": [
+          {
+            "angle": 210,
+            "percent": 0.7,
+            "label": "C"
+          }
+        ],           
         "cities": [
           {
             "name": {
               "name": "Mackinaw City"
             },
-            "companies": ["GT"]
+            "companies": ["NORPAC"]
           }
         ],
         "values": [
@@ -987,16 +1378,19 @@
           },
           "revenues": [
             {
-              "color": "yellow",
-              "cost": "20"
+              "color": "white",
+              "value": 40,
+              "phase": 2
             },
             {
-              "color": "green",
-              "cost": "80"
-            },            
+              "color": "gray",
+              "value": 60,
+              "phase": 4
+            },
             {
-              "color": "brown",
-              "cost": "120"
+              "color": "white",
+              "value": 150,
+              "phase": 6
             }
           ]
         },
@@ -1006,7 +1400,7 @@
             "side": 4
           }
         ],
-        "hexes": ["A5"]
+        "hexes": ["A3"]
       },      
       {
         "color": "offboard",
@@ -1016,12 +1410,19 @@
           },
           "revenues": [
             {
-              "color": "yellow",
-              "cost": "40"
+              "color": "white",
+              "value": 60,
+              "phase": 2
             },
             {
-              "color": "brown",
-              "cost": "70"
+              "color": "gray",
+              "value": 100,
+              "phase": 4
+            },
+            {
+              "color": "white",
+              "value": 150,
+              "phase": 6
             }
           ]
         },
@@ -1049,12 +1450,19 @@
           },
           "revenues": [
             {
-              "color": "yellow",
-              "cost": "20"
+              "color": "white",
+              "value": 40,
+              "phase": 2
             },
             {
-              "color": "brown",
-              "cost": "60"
+              "color": "gray",
+              "value": 60,
+              "phase": 4
+            },
+            {
+              "color": "white",
+              "value": 150,
+              "phase": 6
             }
           ]
         },
@@ -1083,12 +1491,19 @@
           },
           "revenues": [
             {
-              "color": "yellow",
-              "cost": "30"
+              "color": "white",
+              "value": 40,
+              "phase": 2
             },
             {
-              "color": "brown",
-              "cost": "40"
+              "color": "gray",
+              "value": 60,
+              "phase": 4
+            },
+            {
+              "color": "white",
+              "value": 150,
+              "phase": 6
             }
           ]
         },
@@ -1193,34 +1608,27 @@
         "hexes": ["F26"]
       },
       {
-        "color": "yellow",
+        "color": "plain",
         "terrain": [
           {
             "type": "water",
-            "angle": 180,
-            "percent": 0.6,
+            "angle": 300,
+            "percent": 0.5,
             "cost": 80
           }
         ],
         "labels": [
           {
-            "label": "OO",
+            "label": "M",
             "percent": 0.667
           }
         ],
         "cities": [
           {
-            "angle": 65,
-            "percent": 0.6,
+            "angle": 120,
+            "percent": 0.4,
             "name": {
               "name": "Detroit"
-            }
-          },
-          {
-            "angle": 295,
-            "percent": 0.6,
-            "name": {
-              "name": "Windsor"
             }
           }
         ],
@@ -1261,7 +1669,7 @@
         "hexes": ["D14"]
       },
       {
-        "color": "gray",
+        "color": "yellow",
         "track": [
           {
             "side": 5
@@ -1289,6 +1697,13 @@
             "companies": ["NKP"]
           }
         ],
+        "labels": [
+          {
+            "angle": 210,
+            "percent": 0.7,
+            "label": "C"
+          }
+        ],           
         "hexes": ["F10"]
       },
       {
@@ -1348,12 +1763,19 @@
           },
           "revenues": [
             {
-              "color": "yellow",
-              "cost": "30"
+              "color": "white",
+              "value": 40,
+              "phase": 2
             },
             {
-              "color": "brown",
-              "cost": "50"
+              "color": "gray",
+              "value": 60,
+              "phase": 4
+            },
+            {
+              "color": "white",
+              "value": 150,
+              "phase": 6
             }
           ]
         },
@@ -1386,12 +1808,19 @@
           },
           "revenues": [
             {
-              "color": "yellow",
-              "cost": "30"
+              "color": "white",
+              "value": 20,
+              "phase": 2
             },
             {
-              "color": "brown",
-              "cost": "40"
+              "color": "gray",
+              "value": 40,
+              "phase": 4
+            },
+            {
+              "color": "white",
+              "value": 200,
+              "phase": 6
             }
           ]
         },
@@ -1562,24 +1991,6 @@
       },
       {
         "color": "gray",
-        "values": [
-          {
-            "value": 10,
-            "angle": 270,
-            "percent": 0.6
-          }
-        ],
-        "towns": [
-          {
-            "rotation": 30,
-            "angle": 150,
-            "percent": 0.0,
-            "name": {
-              "name": "Muskegon",
-              "rotation": 180
-            }
-          }
-        ],
         "track": [
           {
             "side": 6
@@ -1705,13 +2116,6 @@
               "name": "Scranton",
               "rotation": 45
             }
-          }
-        ],
-        "companies": [
-          {
-            "label": "D&H",
-            "angle": 60,
-            "percent": 0.57
           }
         ],
         "hexes": ["F20"]
@@ -1881,56 +2285,20 @@
       },
       {
         "color": "gray",
-        "towns": [
-          {
-            "angle": 180,
-            "percent": 0.57735,
-            "rotation": 90,
-            "name": {
-              "name": "Suffolk",
-              "reverse": true
-            }
-          }
-        ],
         "track": [
           {
             "type": "sharp",
             "side": 2
           }
         ],
-        "values": [
-          {
-            "value": 10,
-            "angle": 300,
-            "percent": 0.2
-          }
-        ],
         "hexes": ["L18"]
       },      
       {
         "color": "gray",
-        "towns": [
-          {
-            "angle": 120,
-            "percent": 0.57735,
-            "rotation": 30,
-            "name": {
-              "name": "Mansfield",
-              "reverse": true
-            }
-          }
-        ],
         "track": [
           {
             "type": "sharp",
             "side": 1
-          }
-        ],
-        "values": [
-          {
-            "value": 10,
-            "angle": 300,
-            "percent": 0.2
           }
         ],
         "hexes": ["F28"]
@@ -1941,7 +2309,7 @@
           {
             "angle": 150,
             "percent": 0.7,
-            "label": "B"
+            "label": "G"
           }
         ],
         "cities": [
@@ -1972,6 +2340,53 @@
         "hexes": ["E27"]
       },
       {
+        "color": "water",
+        "values": [
+          {
+            "value": 40
+          }
+        ],
+        "icons": [
+          {
+            "type": "port",
+            "percent": 0.6
+          }
+        ],
+        "track": [
+          {
+            "type": "offboard",
+            "side": 1
+          }
+        ],
+        "hexes": ["E29"]
+      },
+      {
+        "color": "water",
+        "values": [
+          {
+            "value": 40
+          }
+        ],
+        "icons": [
+          {
+            "type": "port",
+            "percent": 0.6
+          }
+        ],
+        "track": [
+          {
+            "type": "offboard",
+            "side": 1
+          },
+          {
+            "type": "offboard",
+            "side": 2
+          }          
+        ],
+        "hexes": ["H24"]
+      },
+      
+      {
         "color": "offboard",
         "offBoardRevenue": {
           "name": {
@@ -1979,12 +2394,19 @@
           },
           "revenues": [
             {
-              "cost": "20",
-              "color": "yellow"
+              "color": "white",
+              "value": 30,
+              "phase": 2
             },
             {
-              "cost": "30",
-              "color": "brown"
+              "color": "gray",
+              "value": 60,
+              "phase": 4
+            },
+            {
+              "color": "white",
+              "value": 200,
+              "phase": 6
             }
           ]
         },
@@ -2004,7 +2426,7 @@
         "color": "gray",
         "track": [
           {
-            "type": "sharp",
+            "type": "gentle",
             "side": 6
           }
         ],
@@ -2169,6 +2591,18 @@
       },
       {
         "color": "yellow",
+        "track": [
+          {
+            "side": 1
+          },
+          {
+            "side": 4
+          }
+        ],        
+        "hexes": ["J8"]
+      },      
+      {
+        "color": "yellow",
         "cities": [
           {
             "name": {
@@ -2273,6 +2707,7 @@
       {
         "color": "plain",
         "hexes": [
+          "A5",
           "B16",
           "B18",
           "B26",
@@ -2305,7 +2740,6 @@
           "I9",
           "I13",
           "J4",
-          "J8",
           "J10",
           "J12",
           "K17"
@@ -2323,8 +2757,15 @@
       },
       {
         "color": "water",
+        "coords": ["D18p3","D18p4"]
+      },      
+      {
+        "color": "water",
         "coords": ["D16p3","D16p4", "D16p5"]
-      }
+      },
+      {"color": "water",
+    "coords": ["F10p3","F10p4","F10p5"]}
+
     ]
   }
 }
