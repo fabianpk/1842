@@ -350,20 +350,46 @@
   "privates": [
     {
       "name": "Cooking the Books",
-      "price": 0,
+      "id": "1",
       "revenue": "___",
+      "bid": 5,
       "description": "Your accountant is creative! At the start of the OR, pay $___ from the company treasury to its president"
     },
     {
+      "name": "George Hudson",
+      "id": "2",
+      "revenue": 0,
+      "bid": 5,
+      "description": "You have hired the English railway financier George Hudson. He was famous for his methods to pay out capital instead of earnings. This private closes when the owning company withholds for the first time. When the owning company withholds, it is allowed to pay out from its treasury equal to the amount required to move forward on the stockchart."
+    },
+    {
+      "name": "Bent Track Inventor",
+      "id": "3",
+      "revenue": 0,
+      "tile": "5",
+      "bid": 5,
+      "description": "Allows the owning company to lay an extra yellow tile. The extra yellow tile may be a gentle or sharp city. This closes the company. "
+    },
+    {
+      "name": "Railway Town",
+      "id": "6",
+      "revenue": 0,
+      "tile": "1",
+      "bid": 5,
+      "description": "Where the railroad goes, towns rise up! This private allows you to place a double-dit yellow tile on any blank hex (no city). If there is terrain cost associated with the hex, the owning company must pay it. Laying the yellow tile closes the private."
+    },
+    {
       "name": "Vanderlay Industries",
-      "price": 0,
-      "revenue": "___",
-      "description": "Importer/Exporter Company. The company comes with one token to be placed on one offboard. Increases the revenue of that offboard by $___"
+      "id": "4",
+      "revenue": 0,
+      "bid": 5,
+      "description": "Importer/Exporter Company. This allows the owning company to start an offshore company. The offshore works like any other company, except that it has no route and thus has no requirement to own a train. However, in brown phase, it automatically connects to EITHER New York or Boston (player choice). The company then must own a train. The company is allowed to trace routes past the chosen city even if it is tokened."
     },
     {
       "name": "Experimental train",
-      "price": 0,
-      "revenue": "___",
+      "id": "5",
+      "revenue": 0,
+      "bid": 20,
       "description": "You have invested in a startup train company. Unfortunately, their train is not stable and will only run once and then rust."
     }
   ],
@@ -3022,7 +3048,7 @@
               "type": "water",
               "angle": 300,
               "percent": 0.5,
-              "cost": 60
+              "cost": 40
             }
           ],
           "hexes": [
@@ -3084,9 +3110,7 @@
           ],
           "hexes": [
             "C19",
-            "D20",
             "G17",
-            "I13",
             "E19",
             "J12",
             "J14",
@@ -3099,9 +3123,11 @@
           "color": "plain",
           "hexes": [
             "B4",
+            "D20",
             "B16",
             "B24",
             "C25",
+            "I13",
             "I15",
             "C13",
             "E17",
