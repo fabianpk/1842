@@ -6,22 +6,22 @@
     "designer": "TBP",
     "publisher": "lookout",
     "background": "gray",
-    "titleX": 1400,
-    "titleY": 1300,
+    "titleX": 1800,
+    "titleY": 700,
+    "titleRotate": 90,
     "currency": "$#"
   },
+  "roundTracker": true,
   "prototype": true,
+  "colors": {
+    "purplee": "#9d03fc"
+  },
   "links": {
     "rules": "https://docs.google.com/document/d/1OWTfBA2p1--SBTzM6sXRUwQYp-gpRL-z2jPeHbQobrE"
   },
   "tokens": [
     "Round"
   ],
-  "roundTracker": {
-    "type": "row-reverse",
-    "x": 50,
-    "y": 50
-  },
   "floatPercent": 20,
   "ipo": false,
   "bank": "∞",
@@ -59,19 +59,19 @@
   },
   "tokenTypes": {
     "two": [
-      "Home",
+      50,
       50
     ],
     "three": [
-      "Home",
+      50,
       50,
       50
     ],
     "four": [
-      "Home",
-      50,
-      50,
-      50
+      "50 per",
+      "token",
+      "at float",
+      "miniumum 2"
     ]
   },
   "companies": [
@@ -353,14 +353,14 @@
       "id": "1",
       "revenue": "___",
       "bid": 5,
-      "description": "Your accountant is creative! At the start of the OR, pay $___ from the company treasury to its president"
+      "description": "Your accountant is creative! Money from the company often finds its way to the president. At the start of the OR, pay $___ from the company treasury to its president"
     },
     {
       "name": "George Hudson",
       "id": "2",
       "revenue": 0,
       "bid": 5,
-      "description": "You have hired the English railway financier George Hudson. He was famous for his methods to pay out capital instead of earnings. This private closes when the owning company withholds for the first time. When the owning company withholds, it is allowed to pay out from its treasury equal to the amount required to move forward on the stockchart."
+      "description": "You have hired the English railway financier George Hudson. He was famous for his methods to pay out capital instead of earnings. This private closes when the owning company withholds for the first time. When the owning company withholds, it is allowed to pay out from its treasury equal to the amount required to move right on the stockchart."
     },
     {
       "name": "Bent Track Inventor",
@@ -368,11 +368,11 @@
       "revenue": 0,
       "tile": "5",
       "bid": 5,
-      "description": "Allows the owning company to lay an extra yellow tile. The extra yellow tile may be a gentle or sharp city. This closes the company. "
+      "description": "You have managed to find an engineer which is able to turn track after passing a station! This allows the owning company to lay an extra yellow tile. The extra yellow tile may be a gentle or sharp city. This closes the company. "
     },
     {
       "name": "Railway Town",
-      "id": "6",
+      "id": "4",
       "revenue": 0,
       "tile": "1",
       "bid": 5,
@@ -380,17 +380,17 @@
     },
     {
       "name": "Vanderlay Industries",
-      "id": "4",
+      "id": "5",
       "revenue": 0,
       "bid": 5,
       "description": "Importer/Exporter Company. This allows the owning company to start an offshore company. The offshore works like any other company, except that it has no route and thus has no requirement to own a train. However, in brown phase, it automatically connects to EITHER New York or Boston (player choice). The company then must own a train. The company is allowed to trace routes past the chosen city even if it is tokened."
     },
     {
       "name": "Experimental train",
-      "id": "5",
+      "id": "6",
       "revenue": 0,
       "bid": 20,
-      "description": "You have invested in a startup train company. Unfortunately, their train is not stable and will only run once and then rust."
+      "description": "You have invested in a startup train company. Like many startups, they invest more in flashy presentations than technology, and their train is very unreliable. When absorbed into a company, this gives the owning company a 2-train which runs once and then rusts (before the train buying step). "
     }
   ],
   "phases": [
@@ -445,21 +445,21 @@
   ],
   "pools": [
     {
-      "name": "Market",
+      "name": "Bank Pool",
       "notes": [
         {
           "color": "orange",
-          "note": "Shares in the market pay dividends to the corporation"
+          "note": "Shares in the company treasury pay dividends to the corporation"
         },
         {
           "color": "brown",
           "icon": "exclamation",
-          "note": "No more than 50% of a corporation's shares may be in the market at any time"
+          "note": "No more than 50% of a corporation's shares may be in the market except for EMR"
         },
         {
           "color": "red",
           "icon": "times",
-          "note": "Shares cannot be sold during the first stock round"
+          "note": "Shares cannot be sold of companies that have not operated"
         }
       ]
     }
@@ -487,7 +487,7 @@
       "name": "Stock Round",
       "steps": [
         "Sell any number of shares",
-        "Buy one share"
+        "Buy one share or Start a new company"
       ],
       "ordered": true
     },
@@ -523,20 +523,11 @@
     },
     "display": {
       "legend": {
-        "reverse": true,
         "x": 16,
         "y": 3
       }
     },
     "ledges": [
-      {
-        "color": "water",
-        "border": true,
-        "coords": [
-          "11 0",
-          "11 7"
-        ]
-      },
       {
         "color": "orange",
         "border": true,
@@ -618,32 +609,27 @@
         202,
         224,
         {
-          "value": 248,
-          "legend": 0
+          "value": 248
         },
         {
-          "value": 276,
-          "legend": 0
+          "value": 276
         },
         {
-          "value": 306,
-          "legend": 0
+          "value": 306
         },
         {
-          "value": 340,
-          "legend": 0
+          "value": 340
         },
         {
-          "value": 377,
-          "legend": 0
+          "value": 377
         },
         {
           "value": 419,
-          "legend": 1
+          "legend": 0
         },
         {
           "value": 465,
-          "legend": 1
+          "legend": 0
         },
         {
           "value": 516,
@@ -664,44 +650,35 @@
         142,
         158,
         175,
+        195,
         {
-          "value": 195,
-          "arrow": "up",
-          "arrowColor": "water"
+          "value": 216
         },
         {
-          "value": 216,
-          "legend": 0
+          "value": 240
         },
         {
-          "value": 240,
-          "legend": 0
+          "value": 266
         },
         {
-          "value": 266,
-          "legend": 0
-        },
-        {
-          "value": 295,
-          "legend": 0
+          "value": 295
         },
         {
           "value": 328,
-          "legend": 0,
           "arrow": "up",
           "arrowColor": "orange"
         },
         {
           "value": 365,
-          "legend": 1
+          "legend": 0
         },
         {
           "value": 404,
-          "legend": 1
+          "legend": 0
         },
         {
           "value": 449,
-          "legend": 1,
+          "legend": 0,
           "arrow": "up"
         }
       ],
@@ -721,44 +698,35 @@
           "value": 144
         },
         159,
+        177,
         {
-          "value": 177,
-          "arrow": "up",
-          "arrowColor": "water"
+          "value": 196
         },
         {
-          "value": 196,
-          "legend": 0
+          "value": 218
         },
         {
-          "value": 218,
-          "legend": 0
+          "value": 242
         },
         {
-          "value": 242,
-          "legend": 0
-        },
-        {
-          "value": 269,
-          "legend": 0
+          "value": 269
         },
         {
           "value": 298,
-          "legend": 0,
           "arrow": "up",
           "arrowColor": "orange"
         },
         {
           "value": 331,
-          "legend": 1
+          "legend": 0
         },
         {
           "value": 367,
-          "legend": 1
+          "legend": 0
         },
         {
           "value": 408,
-          "legend": 1,
+          "legend": 0,
           "arrow": "up"
         }
       ],
@@ -778,30 +746,21 @@
         123,
         137,
         152,
+        169,
         {
-          "value": 169,
-          "arrow": "up",
-          "arrowColor": "water"
+          "value": 187
         },
         {
-          "value": 187,
-          "legend": 0
+          "value": 208
         },
         {
-          "value": 208,
-          "legend": 0
+          "value": 230
         },
         {
-          "value": 230,
-          "legend": 0
-        },
-        {
-          "value": 256,
-          "legend": 0
+          "value": 256
         },
         {
           "value": 284,
-          "legend": 0,
           "arrow": "up"
         }
       ],
@@ -821,22 +780,15 @@
         117,
         130,
         145,
+        160,
         {
-          "value": 160,
-          "arrow": "up",
-          "arrowColor": "water"
+          "value": 178
         },
         {
-          "value": 178,
-          "legend": 0
-        },
-        {
-          "value": 198,
-          "legend": 0
+          "value": 198
         },
         {
           "value": 219,
-          "legend": 0,
           "arrow": "up"
         }
       ],
@@ -854,18 +806,12 @@
         107,
         118,
         131,
+        146,
         {
-          "value": 146,
-          "arrow": "up",
-          "arrowColor": "water"
-        },
-        {
-          "value": 162,
-          "legend": 0
+          "value": 162
         },
         {
           "value": 180,
-          "legend": 0,
           "arrow": "up"
         }
       ],
@@ -883,14 +829,9 @@
         93,
         103,
         114,
-        {
-          "value": 127,
-          "arrow": "up",
-          "arrowColor": "water"
-        },
+        127,
         {
           "value": 141,
-          "legend": 0,
           "arrow": "up"
         }
       ],
@@ -967,13 +908,12 @@
     ],
     "legend": [
       {
-        "color": "water",
-        "description": "Major companies only",
-        "icon": "certificate"
-      },
-      {
         "color": "orange",
         "description": "Phase 8 only"
+      },
+      {
+        "color": "purplee",
+        "description": "Endgame trigger"
       }
     ]
   },
@@ -1534,8 +1474,13 @@
     {
       "name": "Base Map",
       "players": {
-        "x": 1600,
-        "y": 1270
+        "x": 600,
+        "y": 120
+      },
+      "roundTracker": {
+        "type": "row-reverse",
+        "x": 575,
+        "y": 10
       },
       "hexes": [
         {
@@ -1910,7 +1855,7 @@
             }
           ],
           "hexes": [
-            "F24"
+            "F22"
           ]
         },
         {
@@ -2273,66 +2218,6 @@
         },
         {
           "color": "yellow",
-          "cities": [
-            {
-              "name": {
-                "name": "Schenectady"
-              }
-            }
-          ],
-          "values": [
-            {
-              "value": 30,
-              "y": -60
-            }
-          ],
-          "track": [
-            {
-              "side": 5
-            },
-            {
-              "side": 1
-            },
-            {
-              "side": 6
-            }
-          ],
-          "hexes": [
-            "D22"
-          ]
-        },
-        {
-          "color": "gray",
-          "values": [
-            {
-              "value": 10,
-              "angle": -30,
-              "percent": 0.5
-            }
-          ],
-          "towns": [
-            {
-              "rotation": 60,
-              "angle": 150,
-              "percent": 0.26,
-              "name": {
-                "name": "Kingston",
-                "reverse": true
-              }
-            }
-          ],
-          "track": [
-            {
-              "type": "gentle",
-              "side": 1
-            }
-          ],
-          "hexes": [
-            "C17"
-          ]
-        },
-        {
-          "color": "yellow",
           "labels": [
             {
               "label": "B",
@@ -2428,6 +2313,12 @@
         },
         {
           "color": "plain",
+          "terrain": [
+            {
+              "type": "water",
+              "cost": 60
+            }
+          ],
           "cities": [
             {
               "name": {
@@ -2437,30 +2328,6 @@
           ],
           "hexes": [
             "B18"
-          ]
-        },
-        {
-          "color": "plain",
-          "terrain": [
-            {
-              "type": "mountain",
-              "cost": 80,
-              "percent": 0.5,
-              "angle": 180
-            }
-          ],
-          "cities": [
-            {
-              "angle": -45,
-              "percent": 0.5,
-              "name": {
-                "name": "Scranton",
-                "rotation": 45
-              }
-            }
-          ],
-          "hexes": [
-            "F18"
           ]
         },
         {
@@ -2501,7 +2368,7 @@
             }
           ],
           "hexes": [
-            "H20"
+            "H18"
           ]
         },
         {
@@ -2547,7 +2414,7 @@
             }
           ],
           "hexes": [
-            "E21"
+            "E19"
           ]
         },
         {
@@ -2611,37 +2478,7 @@
             }
           ],
           "hexes": [
-            "G21"
-          ]
-        },
-        {
-          "color": "gray",
-          "towns": [
-            {
-              "angle": 120,
-              "percent": 0.57735,
-              "rotation": 30,
-              "name": {
-                "name": "Atlantic City",
-                "reverse": true
-              }
-            }
-          ],
-          "track": [
-            {
-              "type": "sharp",
-              "side": 1
-            }
-          ],
-          "values": [
-            {
-              "value": 10,
-              "angle": 300,
-              "percent": 0.2
-            }
-          ],
-          "hexes": [
-            "I21"
+            "G19"
           ]
         },
         {
@@ -2665,7 +2502,7 @@
             }
           ],
           "hexes": [
-            "F26"
+            "F24"
           ]
         },
         {
@@ -2705,7 +2542,7 @@
             }
           ],
           "hexes": [
-            "E25"
+            "E23"
           ]
         },
         {
@@ -2728,7 +2565,7 @@
             }
           ],
           "hexes": [
-            "E27"
+            "E25"
           ]
         },
         {
@@ -2752,10 +2589,14 @@
             {
               "type": "offboard",
               "side": 2
+            },
+            {
+              "type": "offboard",
+              "side": 6
             }
           ],
           "hexes": [
-            "H22"
+            "H20"
           ]
         },
         {
@@ -2793,7 +2634,7 @@
             }
           ],
           "hexes": [
-            "B26"
+            "B24"
           ]
         },
         {
@@ -2805,7 +2646,7 @@
             }
           ],
           "hexes": [
-            "D26"
+            "D24"
           ]
         },
         {
@@ -2844,7 +2685,7 @@
             }
           ],
           "hexes": [
-            "B22"
+            "B20"
           ]
         },
         {
@@ -2912,7 +2753,7 @@
             }
           ],
           "hexes": [
-            "G19"
+            "G17"
           ]
         },
         {
@@ -2941,7 +2782,7 @@
             }
           ],
           "hexes": [
-            "F22"
+            "F20"
           ]
         },
         {
@@ -2973,24 +2814,11 @@
         },
         {
           "color": "yellow",
-          "track": [
-            {
-              "side": 1
-            },
-            {
-              "side": 4
-            }
-          ],
-          "hexes": [
-            "J10"
-          ]
-        },
-        {
-          "color": "yellow",
           "cities": [
             {
               "name": {
-                "name": "Nashville"
+                "name": "Nashville",
+                "rotation": 90
               },
               "companies": [
                 "IC"
@@ -3008,7 +2836,7 @@
               "side": 1
             },
             {
-              "side": 4
+              "side": 3
             }
           ],
           "hexes": [
@@ -3070,19 +2898,6 @@
         },
         {
           "color": "plain",
-          "cities": [
-            {
-              "name": {
-                "name": "Lancaster"
-              }
-            }
-          ],
-          "hexes": [
-            "H18"
-          ]
-        },
-        {
-          "color": "plain",
           "terrain": [
             {
               "type": "water",
@@ -3091,8 +2906,6 @@
           ],
           "hexes": [
             "I19",
-            "B20",
-            "C21",
             "H4",
             "J4",
             "C5",
@@ -3110,13 +2923,14 @@
           ],
           "hexes": [
             "C19",
-            "G17",
-            "E19",
+            "G13",
+            "E17",
             "J12",
+            "F18",
             "J14",
-            "C23",
-            "D24",
-            "E23"
+            "C21",
+            "D22",
+            "E21"
           ]
         },
         {
@@ -3125,13 +2939,13 @@
             "B4",
             "D20",
             "B16",
-            "B24",
-            "C25",
+            "C17",
+            "B22",
+            "C23",
             "I13",
             "I15",
+            "J10",
             "C13",
-            "E17",
-            "F20",
             "F16",
             "D12",
             "D16",
@@ -3139,7 +2953,6 @@
             "F12",
             "G7",
             "G9",
-            "G13",
             "G15",
             "H6",
             "H10",
@@ -3170,16 +2983,8 @@
         {
           "color": "water",
           "coords": [
-            "D18p3",
-            "D18p4"
-          ]
-        },
-        {
-          "color": "water",
-          "coords": [
             "D16p3",
-            "D16p4",
-            "D16p5"
+            "D16p4"
           ]
         },
         {
@@ -3188,6 +2993,15 @@
             "F10p3",
             "F10p4",
             "F10p5"
+          ]
+        },
+        {
+          "color": "water",
+          "coords": [
+            "C17p2",
+            "C17p1",
+            "C17p6",
+            "C17p5"
           ]
         }
       ]
@@ -3331,7 +3145,6 @@
             }
           ],
           "removeBorders": [
-            4,
             2
           ],
           "hexes": [
@@ -3355,25 +3168,6 @@
           ],
           "hexes": [
             "A3"
-          ]
-        },
-        {
-          "color": "offboard",
-          "track": [
-            {
-              "type": "offboard",
-              "side": 2
-            },
-            {
-              "type": "offboard",
-              "side": 3
-            }
-          ],
-          "removeBorders": [
-            1
-          ],
-          "hexes": [
-            "C7"
           ]
         }
       ]
